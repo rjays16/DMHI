@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clinicalcoversheet" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" />
+	<subDataset name="dataset2" />
+	<subDataset name="dataset3" />
+	<subDataset name="dataset4" />
+	<subDataset name="dataset5" />
+	<subDataset name="Table Dataset 1" />
+	<field name="hosp_name" class="java.lang.String"/>
+	<field name="hosp_add" class="java.lang.String"/>
+	<field name="hrn" class="java.lang.String"/>
+	<field name="case_no" class="java.lang.String"/>
+	<field name="name_last" class="java.lang.String"/>
+	<field name="name_first" class="java.lang.String"/>
+	<field name="name_middle" class="java.lang.String"/>
+	<field name="name_maiden" class="java.lang.String"/>
+	<field name="age" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="civil_status" class="java.lang.String"/>
+	<field name="contact_no" class="java.lang.String"/>
+	<field name="date_birth" class="java.lang.String"/>
+	<field name="place_birth" class="java.lang.String"/>
+	<field name="nationality" class="java.lang.String"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="father_name" class="java.lang.String"/>
+	<field name="mother_name" class="java.lang.String"/>
+	<field name="spouse_name" class="java.lang.String"/>
+	<field name="attending_dr" class="java.lang.String"/>
+	<field name="admitting_diagnosis" class="java.lang.String"/>
+	<field name="operations" class="java.lang.String"/>
+	<field name="admission_dt" class="java.lang.String"/>
+	<field name="discharge_dt" class="java.lang.String"/>
+	<field name="final_diagnosis" class="java.lang.String"/>
+	<field name="recovered_mark" class="java.lang.String"/>
+	<field name="improved_mark" class="java.lang.String"/>
+	<field name="unimproved_mark" class="java.lang.String"/>
+	<field name="died_mark" class="java.lang.String"/>
+	<field name="discharge_mark" class="java.lang.String"/>
+	<field name="transfer_mark" class="java.lang.String"/>
+	<field name="hama_mark" class="java.lang.String"/>
+	<field name="absconded_mark" class="java.lang.String"/>
+	<field name="confinement" class="java.lang.String"/>
+	<field name="consulting_dr" class="java.lang.String"/>
+	<field name="dept" class="java.lang.String"/>
+	<field name="ward" class="java.lang.String"/>
+	<field name="clerk" class="java.lang.String"/>
+	<field name="check_phic" class="java.lang.String"/>
+	<field name="check_hmo" class="java.lang.String"/>
+	<field name="check_none" class="java.lang.String"/>
+	<field name="admitting_dr" class="java.lang.String"/>
+	<field name="company" class="java.lang.String"/>
+	<field name="suffix" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="572" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hosp_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="572" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" isBold="true" pdfFontName="Helvetica" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hosp_add}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="40" width="572" height="20" />
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" size="11" isBold="true" pdfFontName="Helvetica" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Patient Clinical Cover Sheet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="107" width="61" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CASE NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="107" width="61" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HRN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="450" y="107" width="117" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="17" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hrn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="62" y="107" width="146" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="17" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{case_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="0" width="77" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Last Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="112" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Middle Name:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="36" width="572" height="1" />
+			</line>
+			<line>
+				<reportElement x="310" y="0" width="1" height="37" />
+			</line>
+			<line>
+				<reportElement x="2" y="0" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="455" y="1" width="87" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Maiden Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="1" width="81" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[First Name:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="132" y="1" width="1" height="35" />
+			</line>
+			<line>
+				<reportElement x="438" y="1" width="1" height="35" />
+			</line>
+			<textField>
+				<reportElement mode="Transparent" x="4" y="16" width="128" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name_last}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="133" y="16" width="141" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name_first}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="312" y="16" width="127" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name_middle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="439" y="16" width="133" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name_maiden}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="15" width="35" height="21" />
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="DejaVu Serif" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{suffix}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Age:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="61" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Gender:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="0" width="84" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Civil Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="0" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contact No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Birth Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="29" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Birth Place:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="29" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nationality:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="29" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Religion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="15" width="141" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="146" y="16" width="76" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="277" y="16" width="97" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{civil_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="423" y="13" width="130" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contact_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="3" y="43" width="94" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_birth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="142" y="43" width="97" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{place_birth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="277" y="43" width="97" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nationality}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="420" y="43" width="150" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{religion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="502" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="2" y="1" width="75" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="42" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="0" y="43" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of Father:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="43" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of Mother:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="42" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of Spouse:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="76" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="0" y="82" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Attending Physician:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="101" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Type of Physician:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="81" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Department:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="102" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Room / Bed No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="137" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Admitting Diagnosis:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="136" width="572" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="182" width="574" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="2" y="183" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Final Diagnosis:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="253" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="0" y="253" width="153" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Procedures / Operations:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="300" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="2" y="301" width="111" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hospitalization Plan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="301" width="33" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[None]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="301" width="30" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[PHIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="301" width="29" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[HMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="301" width="61" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ICD Code:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="321" width="572" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="47" y="350" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Improved]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="322" width="120" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Admission Date / Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="357" width="133" height="20" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Discharged Date / Time:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="391" width="572" height="1" />
+			</line>
+			<line>
+				<reportElement x="300" y="321" width="1" height="70" />
+			</line>
+			<line>
+				<reportElement x="140" y="321" width="1" height="70" />
+			</line>
+			<line>
+				<reportElement x="301" y="356" width="271" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="47" y="336" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Recovered]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="364" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Unimproved]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="378" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Died]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="336" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Discharged]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="350" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Transferred]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="364" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[HAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="378" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Absconded]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="322" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Disposition:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="322" width="68" height="14" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Results:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="392" width="100" height="13" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Admitting Clerk:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="391" width="100" height="13" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[ER Nurse on Duty:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="392" width="122" height="13" />
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Admitting Physician:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="430" width="574" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="-8" y="431" width="572" height="16" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[I have reviewed this record and found it to be accurate and complete]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="484" width="189" height="13" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Informant's Name and Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="484" width="151" height="13" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif"/>
+				</textElement>
+				<text><![CDATA[Attending Physician]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="484" width="225" height="1" />
+			</line>
+			<line>
+				<reportElement x="386" y="483" width="184" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="125" y="300" width="28" height="21" />
+				<textElement>
+					<font fontName="DejaVu Serif" size="16"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="300" width="25" height="21" />
+				<textElement>
+					<font fontName="DejaVu Serif" size="16"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="301" width="25" height="21" />
+				<textElement>
+					<font fontName="DejaVu Serif" size="16"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="26" y="331" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="26" y="342" width="21" height="29" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="26" y="371" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="26" y="357" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="179" y="331" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="179" y="342" width="21" height="29" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="179" y="371" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="179" y="357" width="21" height="25" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(  )]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="6" y="21" width="559" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="2" y="55" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{father_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="182" y="55" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mother_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="378" y="55" width="196" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spouse_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="115" y="81" width="189" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{attending_dr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="153" width="572" height="14" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admitting_diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="284" width="572" height="14" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operations}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="312" y="333" width="230" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admission_dt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="311" y="368" width="230" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{discharge_dt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="2" y="203" width="572" height="14" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="366" y="464" width="206" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{attending_dr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="33" y="327" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{recovered_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="33" y="342" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{improved_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="33" y="354" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unimproved_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="32" y="366" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{died_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="184" y="327" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{discharge_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="184" y="340" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transfer_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="184" y="354" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hama_mark}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="184" y="367" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{absconded_mark}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="115" y="101" width="189" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{confinement}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="391" y="81" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dept}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="391" y="101" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="179" y="406" width="150" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clerk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="133" y="294" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_none}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="208" y="294" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_phic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="283" y="295" width="28" height="30" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_hmo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="354" y="406" width="216" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admitting_dr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="117" width="113" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Other Physician:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-5" y="409" width="123" height="13" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[JUDELYN CANDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="117" width="84" height="20" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Serif" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Company:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="391" y="117" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="2" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="752" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="28" width="572" height="16" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFORMED CONSENT / AUTHORIZATION AGREEMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="572" height="100" />
+				<textElement textAlignment="Justified">
+					<font fontName="DejaVu Serif" size="10"/>
+				</textElement>
+				<text><![CDATA[	I/We certify that the information I/we have given are true to the best of my/our knowledge. Thus, giving consent to the admission, examination, treatment, and procedure and management to the patient after these have been fully explained by the doctors including the risks involved and their alternative procedures in a dialect fully understood by me/us. It is understood that whatever the result of the medical/surgical interventions, the hospital or any of its staff shall not be liable or responsible to any charges that the family, guardians, or relatives may claim.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="139" width="572" height="38" />
+				<textElement textAlignment="Justified">
+					<font fontName="DejaVu Serif" size="10"/>
+				</textElement>
+				<text><![CDATA[	Moreover, it is understood that I/we are responsible for all hospital bills and hereby agree to make partial payments within the patient's confinement period and after discharges as requested by the hospital staff.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="177" width="572" height="16" />
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PATIENT'S RIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="346" width="572" height="39" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[		I/We fully understood our right as an in-patient and will use these rights during my/our admission or when necessary as explained to me/us by the medical healthcare on duty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="385" width="572" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[WAIVER for PHIC Patients]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="424" width="572" height="62" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[	I/We understand that in case the diagnosis, sickness or for confinement will not be covered by PHILHEALTH. (Ako/Kami nakasabot nga kung ang sakit nga hinungdan sa iyang pagka-admit kay dili mabayaran sa PHILHEALTH) I/We undertake to shoulder all expenses incurred during the confinement period. (Ako/Kami ang mobayad sa mga bayronon sa sulod adlaw nga naadmit sa hospital)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="486" width="572" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Patient's Last Admission Record: ___________________________ Name of Hospital: _____________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="506" width="572" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Use of Philhealth (Please Check): 	 (   ) YES 		(   ) NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="2" y="526" width="572" height="32" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[	If YES, REQUIRED TO SUBMIT MEDICAL CERTIFICATE especially in cases of confinement of less than 90 days from previous admission.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="558" width="572" height="46" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[In witness hereof, I here unto set my hand/thumb mark this _____________________ day of ________________________ year _______________ at _________________________________________________________________ Time _________.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="604" width="320" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PROCEDURE: _____________________________    ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="636" width="176" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PERSON GIVING THE CONSENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="23" y="685" width="153" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Signature over Printed Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="25" y="730" width="159" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Relationship to the Patient]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="321" y="604" width="308" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[EXPLAINED BY: ______________________________    ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="365" y="651" width="165" height="20" forecolor="#000000" backcolor="#FFFFFF" />
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="DejaVu Serif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Thumbmark if Unable to Write]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="374" y="671" width="130" height="79" forecolor="#000000" backcolor="#FFFFFF" />
+			</rectangle>
+			<line>
+				<reportElement x="2" y="729" width="206" height="1" />
+			</line>
+			<line>
+				<reportElement x="0" y="685" width="208" height="1" />
+			</line>
+			<staticText>
+				<reportElement x="2" y="200" width="247" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to considerate and respectful care]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="221" width="397" height="16" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to information about diagnosis, treatment and prognosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="236" width="210" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to informed consent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="256" width="299" height="17" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to refuse treatments and other medical procedures]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="273" width="210" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to privacy and confidentiality]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="293" width="210" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to services and to transfer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="201" width="308" height="19" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to be subjects of research and experimentation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="220" width="298" height="17" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to expect reasonable continuity of care]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="236" width="298" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to examine and receive an explanation of his bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="256" width="298" height="17" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to know hospital rules and regulations]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="273" width="216" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to dignity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="293" width="216" height="20" />
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[• Right to make decisions]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
