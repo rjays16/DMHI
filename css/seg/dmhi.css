@@ -1,0 +1,51 @@
+/**
+ *	Created by Jeff Ponteras
+ * 	Date: April 26 2018
+ *  For custom css in DMHI
+ */
+
+.dmhi-btn-m{
+	width: 130px;
+	height: 25px;
+	/*box-shadow: 3px 4px 0px 0px #1564ad;*/
+	border-radius:6px;
+	border:1px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+	background-color:#0088ec;
+}
+
+.dmhi-btn-m:hover{
+	background-color: #00edff;
+	/*box-shadow: 3px 4px 0px 0px #79bbff;*/
+	text-shadow:0px 1px 0px #00244a;
+}
+
+.dmhi-btn-s{
+	width: 150px;
+	height: 25px;
+	/*box-shadow: 3px 4px 0px 0px #1564ad;*/
+	border-radius:6px;
+	border:1px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+	background-color:#0088ec;
+}
+
+.dmhi-btn-s:hover{
+	background-color: #00edff;
+	/*box-shadow: 3px 4px 0px 0px #79bbff;*/
+	text-shadow:0px 1px 0px #00244a;
+}

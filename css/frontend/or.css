@@ -1,0 +1,34 @@
+body{
+    background-image: url('images/bg.png');
+}
+
+#wrapper{
+    padding:20px;
+}
+#patient-search-result tbody tr:hover{
+    background-color: grey;
+}
+
+#patient-search-result tbody {
+    height: 50px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+.page-header h1{
+    display: inline-block;
+}
+.page-header img{
+    display: inline-block;
+}
+.breadcrumb{
+    background-color: #FFFFFF;
+}.ajax-loader{
+    width: 14px;
+    height: 14px;
+}
+
+footer {
+	margin: 0px 20px 0px 20px;
+	padding: 20px;
+	background-color: #F8F7F7;
+}
