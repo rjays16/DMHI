@@ -1,0 +1,32 @@
+
+DROP TABLE IF EXISTS `seg_rep_lab_income_tbl`;
+CREATE TABLE `seg_rep_lab_income_tbl` (
+  `refno` varchar(12) DEFAULT NULL,
+  `pid` varchar(12) DEFAULT NULL,
+  `group_code` varchar(10) DEFAULT NULL,
+  `encounter_type` smallint(5) DEFAULT NULL,
+  `encounter_nr` varchar(12) DEFAULT NULL,
+  `service_code` varchar(10) DEFAULT NULL,
+  `fromBB` tinyint(1) DEFAULT NULL,
+  `is_rdu` tinyint(1) DEFAULT NULL,
+  `DATE_` date DEFAULT NULL,
+  `SHIFT` time DEFAULT NULL,
+  `AMT_PAID` double(10,2) DEFAULT NULL,
+  `Charity` double(10,2) DEFAULT NULL,
+  `PHS` double(10,2) DEFAULT NULL,
+  `LINGAP` double(10,2) DEFAULT NULL,
+  `CMAP` double(10,2) DEFAULT NULL,
+  `PHIC` double(10,2) DEFAULT NULL,
+  `SOCIALIZED` double(10,2) DEFAULT NULL,
+  `CHARGE` double(10,2) DEFAULT NULL,
+  `RDU` double(10,2) DEFAULT NULL,
+  `OTHER` double(10,2) DEFAULT NULL,
+  `CAO` double(10,2) DEFAULT NULL,
+  `COH` double(10,2) DEFAULT NULL,
+  `HACT` double(10,2) DEFAULT NULL,
+  `MISSION` double(10,2) DEFAULT NULL,
+  `PCSO` double(10,2) DEFAULT NULL,
+  `POPCOM` double(10,2) DEFAULT NULL,
+  `QCPB` double(10,2) DEFAULT NULL,
+  `SSS` double(10,2) DEFAULT NULL
+);

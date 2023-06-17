@@ -1,0 +1,31 @@
+
+DROP TABLE IF EXISTS `seg_lab_result_params`;
+CREATE TABLE `seg_lab_result_params` (
+  `param_id` smallint(5) unsigned NOT NULL,
+  `group_id` smallint(5) unsigned NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `short_name` varchar(10) DEFAULT NULL,
+  `status` varchar(25) DEFAULT '',
+  `param_group_id` smallint(5) unsigned DEFAULT NULL,
+  `is_numeric` tinyint(1) DEFAULT NULL,
+  `is_boolean` tinyint(1) DEFAULT NULL,
+  `is_longtext` tinyint(1) DEFAULT NULL,
+  `SI_unit` varchar(20) DEFAULT NULL,
+  `SI_lo_normal` varchar(20) DEFAULT NULL,
+  `SI_hi_normal` varchar(20) DEFAULT NULL,
+  `CU_unit` varchar(20) DEFAULT NULL,
+  `CU_lo_normal` varchar(20) DEFAULT NULL,
+  `CU_hi_normal` varchar(20) DEFAULT NULL,
+  `is_female` tinyint(1) DEFAULT NULL,
+  `is_male` tinyint(1) DEFAULT NULL,
+  `is_time` tinyint(1) DEFAULT NULL,
+  `is_multiple_choice` tinyint(1) DEFAULT NULL,
+  `is_table` tinyint(1) DEFAULT NULL,
+  `remarks` text,
+  `history` text,
+  `create_id` varchar(35) DEFAULT NULL,
+  `create_dt` datetime DEFAULT NULL,
+  `modify_id` varchar(35) DEFAULT NULL,
+  `modify_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`param_id`,`group_id`)
+);

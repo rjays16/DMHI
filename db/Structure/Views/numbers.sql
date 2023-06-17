@@ -1,0 +1,1 @@
+CREATE VIEW `numbers` AS select (((`ones`.`digit` + (`tens`.`digit` * 10)) + (`hundreds`.`digit` * 100)) + (`thousands`.`digit` * 1000)) AS `number` from (((`digits` `ones` join `digits` `tens`) join `digits` `hundreds`) join `digits` `thousands`);

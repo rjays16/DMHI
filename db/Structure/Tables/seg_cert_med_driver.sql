@@ -1,0 +1,30 @@
+
+DROP TABLE IF EXISTS `seg_cert_med_driver`;
+CREATE TABLE `seg_cert_med_driver` (
+  `encounter_nr` varchar(12) NOT NULL,
+  `right_eye` varchar(10) DEFAULT NULL,
+  `left_eye` varchar(10) DEFAULT NULL,
+  `right_ear` varchar(20) DEFAULT NULL,
+  `left_ear` varchar(20) DEFAULT NULL,
+  `gen_physique` text,
+  `systole` int(3) DEFAULT NULL,
+  `diastole` int(3) DEFAULT NULL,
+  `diseases` text,
+  `remarks` text,
+  `height` varchar(10) DEFAULT NULL,
+  `weight` varchar(10) DEFAULT NULL,
+  `comment_nr` int(3) DEFAULT NULL,
+  `with_cond_type` varchar(3) DEFAULT NULL,
+  `weight_unit` varchar(10) DEFAULT NULL,
+  `height_unit` varchar(10) DEFAULT NULL,
+  `i_plate` varchar(20) DEFAULT NULL,
+  `dr_nr` int(11) DEFAULT NULL,
+  `is_with_corrective_lenses` int(1) DEFAULT NULL,
+  `is_with_hearing_aid` int(1) DEFAULT NULL,
+  `history` text,
+  `modify_id` varchar(50) DEFAULT NULL,
+  `modify_dt` datetime DEFAULT NULL,
+  `create_id` varchar(50) DEFAULT NULL,
+  `create_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`encounter_nr`)
+);

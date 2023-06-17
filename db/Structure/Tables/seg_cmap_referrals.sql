@@ -1,0 +1,30 @@
+
+DROP TABLE IF EXISTS `seg_cmap_referrals`;
+CREATE TABLE `seg_cmap_referrals` (
+  `id` char(36) NOT NULL,
+  `referral_date` datetime NOT NULL,
+  `referral_nr` varchar(25) NOT NULL,
+  `control_nr` varchar(25) NOT NULL,
+  `pid` varchar(12) DEFAULT NULL,
+  `walkin_pid` varchar(12) DEFAULT NULL,
+  `cmap_account` smallint(5) unsigned NOT NULL,
+  `referral_amount` decimal(10,4) NOT NULL DEFAULT '0.0000',
+  `current_balance` decimal(10,4) NOT NULL DEFAULT '0.0000',
+  `remarks` tinytext NOT NULL,
+  `history` text NOT NULL,
+  `create_id` varchar(35) DEFAULT NULL,
+  `create_time` datetime NOT NULL,
+  `last_modify_id` varchar(35) DEFAULT NULL,
+  `last_modify_time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_seg_cmap_referrals_person` (`pid`),
+  KEY `FK_seg_cmap_referrals_creator` (`create_id`),
+  KEY `FK_seg_cmap_referrals_last_modifier` (`last_modify_id`),
+  KEY `FK_seg_cmap_referrals` (`cmap_account`),
+  KEY `FK_seg_cmap_referrals_walkin` (`walkin_pid`),
+  CONSTRAINT `FK_seg_cmap_referrals` FOREIGN KEY (`cmap_account`) REFERENCES `seg_cmap_accounts` (`account_nr`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_seg_cmap_referrals_creator` FOREIGN KEY (`create_id`) REFERENCES `care_users` (`login_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `FK_seg_cmap_referrals_last_modifier` FOREIGN KEY (`last_modify_id`) REFERENCES `care_users` (`login_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `FK_seg_cmap_referrals_person` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_seg_cmap_referrals_walkin` FOREIGN KEY (`walkin_pid`) REFERENCES `seg_walkin` (`pid`) ON UPDATE CASCADE
+);

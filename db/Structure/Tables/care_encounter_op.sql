@@ -1,0 +1,61 @@
+
+DROP TABLE IF EXISTS `care_encounter_op`;
+CREATE TABLE `care_encounter_op` (
+  `nr` varchar(12) NOT NULL,
+  `refno` varchar(12) DEFAULT NULL,
+  `year` varchar(4) NOT NULL DEFAULT '0',
+  `dept_nr` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `op_room` varchar(10) NOT NULL DEFAULT '0',
+  `op_nr` mediumint(9) NOT NULL DEFAULT '0',
+  `op_date` date NOT NULL DEFAULT '0000-00-00',
+  `op_time` time DEFAULT '00:00:00',
+  `op_src_date` varchar(8) NOT NULL DEFAULT '',
+  `encounter_nr` varchar(12) NOT NULL DEFAULT '0',
+  `diagnosis` text NOT NULL,
+  `operator` text NOT NULL,
+  `assistant` text NOT NULL,
+  `scrub_nurse` text NOT NULL,
+  `rotating_nurse` text NOT NULL,
+  `anesthesia` varchar(30) NOT NULL DEFAULT '',
+  `an_doctor` text NOT NULL,
+  `op_therapy` text NOT NULL,
+  `result_info` text NOT NULL,
+  `entry_time` varchar(5) NOT NULL DEFAULT '',
+  `cut_time` varchar(5) NOT NULL DEFAULT '',
+  `close_time` varchar(5) NOT NULL DEFAULT '',
+  `exit_time` varchar(5) NOT NULL DEFAULT '',
+  `entry_out` text NOT NULL,
+  `cut_close` text NOT NULL,
+  `wait_time` text NOT NULL,
+  `bandage_time` text NOT NULL,
+  `repos_time` text NOT NULL,
+  `encoding` longtext NOT NULL,
+  `doc_date` varchar(10) NOT NULL DEFAULT '',
+  `doc_time` varchar(5) NOT NULL DEFAULT '',
+  `duty_type` varchar(15) NOT NULL DEFAULT '',
+  `material_codedlist` text NOT NULL,
+  `container_codedlist` text NOT NULL,
+  `icd_code` text NOT NULL,
+  `ops_code` varchar(12) DEFAULT NULL,
+  `ops_intern_code` text NOT NULL,
+  `status` varchar(25) NOT NULL DEFAULT '',
+  `history` text NOT NULL,
+  `modify_id` varchar(35) NOT NULL DEFAULT '',
+  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_id` varchar(35) NOT NULL DEFAULT '',
+  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`nr`),
+  KEY `dept` (`dept_nr`),
+  KEY `op_room` (`op_room`),
+  KEY `op_date` (`op_date`),
+  KEY `FK_care_encounter_op` (`encounter_nr`),
+  KEY `ops_code` (`ops_code`),
+  CONSTRAINT `care_encounter_op_ibfk_1` FOREIGN KEY (`ops_code`) REFERENCES `seg_ops_rvs` (`code`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_care_encounter_op` FOREIGN KEY (`encounter_nr`) REFERENCES `care_encounter` (`encounter_nr`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;

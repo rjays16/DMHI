@@ -1,0 +1,30 @@
+
+DROP TABLE IF EXISTS `seg_radio_services`;
+CREATE TABLE `seg_radio_services` (
+  `service_code` varchar(10) NOT NULL,
+  `group_code` varchar(10) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `price_cash` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `price_charge` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `prof_fee` decimal(10,2) DEFAULT '0.00',
+  `dept_fund` decimal(10,2) DEFAULT '0.00',
+  `stat_mode` enum('percentage','fix') DEFAULT NULL,
+  `stat_addon` decimal(10,2) DEFAULT '0.00',
+  `pay_mode` enum('percentage','fix') DEFAULT NULL,
+  `pay_addon` decimal(10,2) DEFAULT NULL,
+  `is_socialized` tinyint(1) NOT NULL DEFAULT '0',
+  `status` varchar(35) DEFAULT NULL,
+  `history` text,
+  `modify_id` varchar(35) NOT NULL,
+  `modify_dt` datetime DEFAULT '0000-00-00 00:00:00',
+  `create_id` varchar(35) NOT NULL,
+  `create_dt` datetime DEFAULT '0000-00-00 00:00:00',
+  `is_ER` tinyint(1) DEFAULT NULL,
+  `only_in_clinic` tinyint(1) DEFAULT '1',
+  `remarks` text,
+  `has_group_stat` int(10) DEFAULT NULL,
+  `in_phs` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`service_code`),
+  KEY `FK_seg_radio_services` (`group_code`),
+  CONSTRAINT `FK_seg_radio_services` FOREIGN KEY (`group_code`) REFERENCES `seg_radio_service_groups` (`group_code`) ON DELETE CASCADE ON UPDATE CASCADE
+);

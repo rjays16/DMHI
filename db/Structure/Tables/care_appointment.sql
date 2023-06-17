@@ -1,0 +1,33 @@
+
+DROP TABLE IF EXISTS `care_appointment`;
+CREATE TABLE `care_appointment` (
+  `nr` bigint(20) unsigned NOT NULL,
+  `pid` varchar(12) NOT NULL DEFAULT '0',
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  `time` time NOT NULL DEFAULT '00:00:00',
+  `to_dept_id` varchar(25) NOT NULL DEFAULT '',
+  `to_dept_nr` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `to_personell_nr` int(11) NOT NULL DEFAULT '0',
+  `to_personell_name` varchar(60) DEFAULT NULL,
+  `purpose` text NOT NULL,
+  `urgency` tinyint(2) unsigned NOT NULL DEFAULT '0',
+  `remind` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `remind_email` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `remind_mail` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `remind_phone` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `appt_status` varchar(35) NOT NULL DEFAULT 'pending',
+  `cancel_by` varchar(255) NOT NULL DEFAULT '',
+  `cancel_date` date DEFAULT NULL,
+  `cancel_reason` varchar(255) DEFAULT NULL,
+  `encounter_class_nr` int(1) NOT NULL DEFAULT '0',
+  `encounter_nr` int(11) NOT NULL DEFAULT '0',
+  `status` varchar(25) NOT NULL DEFAULT '',
+  `history` text NOT NULL,
+  `modify_id` varchar(35) NOT NULL DEFAULT '',
+  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_id` varchar(35) NOT NULL DEFAULT '',
+  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`nr`),
+  KEY `pid` (`pid`),
+  CONSTRAINT `FK_care_appointment` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`) ON UPDATE CASCADE
+);

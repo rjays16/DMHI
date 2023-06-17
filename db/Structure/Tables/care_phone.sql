@@ -1,0 +1,33 @@
+
+DROP TABLE IF EXISTS `care_phone`;
+CREATE TABLE `care_phone` (
+  `item_nr` bigint(20) unsigned NOT NULL,
+  `title` varchar(25) DEFAULT NULL,
+  `name` varchar(45) NOT NULL DEFAULT '',
+  `vorname` varchar(45) NOT NULL DEFAULT '',
+  `pid` int(11) unsigned NOT NULL DEFAULT '0',
+  `personell_nr` int(10) unsigned NOT NULL DEFAULT '0',
+  `dept_nr` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `beruf` varchar(25) DEFAULT NULL,
+  `bereich1` varchar(25) DEFAULT NULL,
+  `bereich2` varchar(25) DEFAULT NULL,
+  `inphone1` varchar(15) DEFAULT NULL,
+  `inphone2` varchar(15) DEFAULT NULL,
+  `inphone3` varchar(15) DEFAULT NULL,
+  `exphone1` varchar(25) DEFAULT NULL,
+  `exphone2` varchar(25) DEFAULT NULL,
+  `funk1` varchar(15) DEFAULT NULL,
+  `funk2` varchar(15) DEFAULT NULL,
+  `roomnr` varchar(10) DEFAULT NULL,
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  `time` time NOT NULL DEFAULT '00:00:00',
+  `status` varchar(15) NOT NULL DEFAULT '',
+  `history` text NOT NULL,
+  `modify_id` varchar(35) NOT NULL DEFAULT '',
+  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_id` varchar(35) NOT NULL DEFAULT '',
+  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`item_nr`,`pid`,`personell_nr`,`dept_nr`),
+  KEY `name` (`name`),
+  KEY `vorname` (`vorname`)
+);
